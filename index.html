@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrientaU - Sistema de Orientación Vocacional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== LAYOUT PRINCIPAL (oculto por defecto) ========== -->
+<div id="app-layout" class="app-layout hidden">
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>OrientaU</h2>
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <!-- Se llena dinámicamente según el rol -->
+        </ul>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <span class="user-name" id="user-name-display"></span>
+                <span class="user-role" id="user-role-display"></span>
+            </div>
+            <button class="btn-logout" id="btn-logout">Cerrar sesión</button>
+        </div>
+    </nav>
+    <main class="main-content" id="main-content">
+        <!-- Se llena dinámicamente -->
+    </main>
+</div>
+
+<!-- ========== PANTALLAS DE AUTENTICACIÓN ========== -->
+<div id="auth-container">
+    <!-- Login -->
+    <div id="view-login" class="auth-view">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <h1>OrientaU</h1>
+                <p>Sistema de Orientación Vocacional</p>
+            </div>
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="login-email">Correo electrónico</label>
+                    <input type="email" id="login-email" required placeholder="tu@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" required placeholder="Tu contraseña">
+                </div>
+                <div class="form-error hidden" id="login-error"></div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                <div class="auth-links">
+                    <a href="#" id="link-forgot-password">¿Olvidaste tu contraseña?</a>
+                    <a href="#" id="link-to-register">Crear cuenta</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Registro -->
+    <div id="view-register" class="auth-view hidden">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <h1>Crear Cuenta</h1>
+                <p>Regístrate para comenzar tu evaluación</p>
+            </div>
+            <form id="form-register">
+                <div class="form-group">
+                    <label for="reg-name">Nombre completo</label>
+                    <input type="text" id="reg-name" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" required placeholder="tu@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Contraseña</label>
+                    <input type="password" id="reg-password" required placeholder="Mínimo 8 caracteres, letras y números">
+                </div>
+                <div class="form-group">
+                    <label for="reg-password-confirm">Confirmar contraseña</label>
+                    <input type="password" id="reg-password-confirm" required placeholder="Repite tu contraseña">
+                </div>
+                <div class="form-error hidden" id="register-error"></div>
+                <div class="form-success hidden" id="register-success"></div>
+                <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                <div class="auth-links">
+                    <a href="#" id="link-to-login">¿Ya tienes cuenta? Inicia sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recuperar contraseña -->
+    <div id="view-recover" class="auth-view hidden">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <h1>Recuperar Contraseña</h1>
+                <p>Ingresa tu correo para recibir un enlace de recuperación</p>
+            </div>
+            <form id="form-recover">
+                <div class="form-group">
+                    <label for="recover-email">Correo electrónico</label>
+                    <input type="email" id="recover-email" required placeholder="tu@correo.com">
+                </div>
+                <div class="form-error hidden" id="recover-error"></div>
+                <div class="form-success hidden" id="recover-success"></div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar enlace</button>
+                <div class="auth-links">
+                    <a href="#" id="link-back-login">Volver al inicio de sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Resetear contraseña -->
+    <div id="view-reset" class="auth-view hidden">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <h1>Nueva Contraseña</h1>
+                <p>Establece tu nueva contraseña</p>
+            </div>
+            <form id="form-reset">
+                <div class="form-group">
+                    <label for="reset-new-password">Nueva contraseña</label>
+                    <input type="password" id="reset-new-password" required placeholder="Mínimo 8 caracteres">
+                </div>
+                <div class="form-group">
+                    <label for="reset-confirm-password">Confirmar contraseña</label>
+                    <input type="password" id="reset-confirm-password" required placeholder="Repite tu contraseña">
+                </div>
+                <div class="form-error hidden" id="reset-error"></div>
+                <div class="form-success hidden" id="reset-success"></div>
+                <button type="submit" class="btn btn-primary btn-block">Cambiar contraseña</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
