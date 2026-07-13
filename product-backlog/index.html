@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Backlog - Orientación Académica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">Orientación Académica</a>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../requerimientos/index.html">Requerimientos</a>
+            <a href="../historias-de-usuario/index.html">Historias de Usuario</a>
+            <a href="index.html" class="active">Product Backlog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <h2>Product Backlog</h2>
+            <a href="../index.html" class="back">&larr; Volver al inicio</a>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Historia de Usuario</th>
+                        <th>Iteración</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>HUA-001</strong></td>
+                        <td>Registro de usuario</td>
+                        <td><span class="badge badge-iter">1</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-002</strong></td>
+                        <td>Iniciar y cerrar sesión</td>
+                        <td><span class="badge badge-iter">1</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-003</strong></td>
+                        <td>Recuperar contraseña</td>
+                        <td><span class="badge badge-iter">1</span></td>
+                        <td><span class="badge badge-media">Media</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-004</strong></td>
+                        <td>Realizar test de aptitudes</td>
+                        <td><span class="badge badge-iter">2</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-005</strong></td>
+                        <td>Ingresar promedio y calcular puntaje</td>
+                        <td><span class="badge badge-iter">2</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-006</strong></td>
+                        <td>Visualizar informe académico</td>
+                        <td><span class="badge badge-iter">3</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-007</strong></td>
+                        <td>Consultar puntajes referenciales</td>
+                        <td><span class="badge badge-iter">3</span></td>
+                        <td><span class="badge badge-media">Media</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-008</strong></td>
+                        <td>Acceso de orientador a resultados de estudiantes</td>
+                        <td><span class="badge badge-iter">4</span></td>
+                        <td><span class="badge badge-media">Media</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-009</strong></td>
+                        <td>Gestión de preguntas del test</td>
+                        <td><span class="badge badge-iter">4</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>HUA-010</strong></td>
+                        <td>Gestión de carreras y universidades</td>
+                        <td><span class="badge badge-iter">4</span></td>
+                        <td><span class="badge badge-alta">Alta</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top:2.5rem; margin-bottom:1rem; color:var(--secondary);">Resumen por Iteración</h3>
+        <div class="cards" style="margin-top:0;">
+            <div class="card" style="cursor:default;">
+                <div class="icon icon-blue">1</div>
+                <h3>Iteración 1 &mdash; Autenticación</h3>
+                <p>3 historias: Registro, Login/Logout, Recuperación de contraseña.</p>
+            </div>
+            <div class="card" style="cursor:default;">
+                <div class="icon icon-amber">2</div>
+                <h3>Iteración 2 &mdash; Evaluación</h3>
+                <p>2 historias: Test de aptitudes, Cálculo de puntaje referencial.</p>
+            </div>
+            <div class="card" style="cursor:default;">
+                <div class="icon icon-green">3</div>
+                <h3>Iteración 3 &mdash; Informes</h3>
+                <p>2 historias: Informe de afinidad, Consulta Senecyt.</p>
+            </div>
+            <div class="card" style="cursor:default;">
+                <div class="icon icon-red">4</div>
+                <h3>Iteración 4 &mdash; Administración</h3>
+                <p>3 historias: Orientador, Gestión de preguntas, Gestión de carreras.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Orientación Académica &mdash; Documentación del Sistema</p>
+    </footer>
+</body>
+</html>

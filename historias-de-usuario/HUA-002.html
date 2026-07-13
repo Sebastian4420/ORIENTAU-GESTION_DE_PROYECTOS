@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUA-002 Iniciar y cerrar sesión</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="brand">Orientación Académica</a>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../requerimientos/index.html">Requerimientos</a>
+            <a href="index.html" class="active">Historias de Usuario</a>
+            <a href="../product-backlog/index.html">Product Backlog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <h2>Historia de Usuario</h2>
+            <a href="index.html" class="back">&larr; Volver a la lista</a>
+        </div>
+
+        <div class="hu-detail">
+            <div class="hu-header">
+                <span class="hu-id">HUA-002</span>
+                <h2>Iniciar y cerrar sesión</h2>
+            </div>
+            <div class="hu-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Usuario</span>
+                    <span class="meta-value">Postulante</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Prioridad</span>
+                    <span class="meta-value"><span class="badge badge-alta">Alta</span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Riesgo</span>
+                    <span class="meta-value"><span class="badge badge-medio">Medio</span></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Responsable</span>
+                    <span class="meta-value">Morales Jostin</span>
+                </div>
+            </div>
+            <div class="hu-body">
+                <h3>Descripción</h3>
+                <p>Como postulante, necesito iniciar y cerrar sesión de forma segura, para garantizar el acceso controlado a mis evaluaciones y resultados personales.</p>
+
+                <h3>Observación</h3>
+                <div class="observacion">El acceso se realiza mediante correo y contraseña previamente registrados; no se contempla inicio de sesión mediante redes sociales.</div>
+
+                <h3>Criterios de aceptación</h3>
+                <ul>
+                    <li>El sistema debe validar las credenciales antes de conceder acceso.</li>
+                    <li>El sistema debe bloquear el acceso luego de tres intentos fallidos consecutivos, solicitando esperar diez minutos.</li>
+                    <li>El cierre de sesión debe invalidar el token de acceso activo.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top:1.5rem;">
+            <a href="HUA-001.html" class="back">&larr; Anterior: HUA-001</a>
+            <a href="HUA-003.html" class="back">Siguiente: HUA-003 &rarr;</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Proyecto Orientación Académica &mdash; Documentación del Sistema</p>
+    </footer>
+</body>
+</html>
