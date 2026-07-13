@@ -50,7 +50,7 @@ export default function CounselorResultsPage() {
       <Card>
         <div className="form-group">
           <label>Buscar estudiante (nombre o correo)</label>
-          <div style={{ display: 'flex', gap: 12 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <input
               type="text" placeholder="Escribe el nombre o correo..."
               value={searchQuery} onChange={e => setSearchQuery(e.target.value)}

@@ -136,7 +136,7 @@ export default function TestPage({ onNavigate }) {
   return (
     <>
       <PageHeader title={`${areaInfo.icon} Área ${areaInfo.name}`}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 8, flexWrap: 'wrap' }}>
           <Button variant="outline" size="sm" onClick={() => { setCurrentArea(null); setCurrentQuestionIndex(0); }}>
             ← Volver a áreas
           </Button>
@@ -154,7 +154,7 @@ export default function TestPage({ onNavigate }) {
         selectedAnswer={areaAnswers[currentQuestionIndex]}
         onSelect={(idx) => handleSaveAnswer(currentQuestionIndex, idx)}
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16, flexWrap: 'wrap', gap: 8 }}>
         <div>
           {currentQuestionIndex > 0 && (
             <Button variant="outline" onClick={handlePrev}>← Anterior</Button>

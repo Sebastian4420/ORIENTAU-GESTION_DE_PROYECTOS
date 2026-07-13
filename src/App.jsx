@@ -24,6 +24,7 @@ const DEFAULT_PAGES = {
 function AppContent() {
   const { currentUser, loading, logout } = useAuth();
   const [currentPage, setCurrentPage] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     initDB();
@@ -34,6 +35,11 @@ function AppContent() {
       setCurrentPage(DEFAULT_PAGES[currentUser.role] || 'dashboard');
     }
   }, [currentUser]);
+
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    setSidebarOpen(false);
+  };
 
   if (loading) {
     return (
@@ -49,24 +55,37 @@ function AppContent() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'dashboard': return <DashboardPage onNavigate={setCurrentPage} />;
-      case 'test': return <TestPage onNavigate={setCurrentPage} />;
+      case 'dashboard': return <DashboardPage onNavigate={handleNavigate} />;
+      case 'test': return <TestPage onNavigate={handleNavigate} />;
       case 'grade': return <GradePage />;
-      case 'report': return <ReportPage onNavigate={setCurrentPage} />;
+      case 'report': return <ReportPage onNavigate={handleNavigate} />;
       case 'senecyt': return <SenecytPage />;
-      case 'counselor-dashboard': return <CounselorDashboardPage onNavigate={setCurrentPage} />;
+      case 'counselor-dashboard': return <CounselorDashboardPage onNavigate={handleNavigate} />;
       case 'counselor-results': return <CounselorResultsPage />;
       case 'admin-dashboard': return <AdminDashboardPage />;
       case 'admin-questions': return <AdminQuestionsPage />;
       case 'admin-careers': return <AdminCareersPage />;
       case 'admin-users': return <AdminUsersPage />;
-      default: return <DashboardPage onNavigate={setCurrentPage} />;
+      default: return <DashboardPage onNavigate={handleNavigate} />;
     }
   };
 
   return (
     <div className="app-layout">
-      <Sidebar currentPage={currentPage} onNavigate={setCurrentPage} onLogout={logout} />
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
+      <button
+        className="sidebar-toggle"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+      <Sidebar
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
+        onLogout={logout}
+        isOpen={sidebarOpen}
+      />
       <main className="main-content">
         {renderPage()}
       </main>

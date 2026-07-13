@@ -70,7 +70,7 @@ export default function AdminCareersPage() {
   return (
     <>
       <PageHeader title="Gestión de Carreras y Universidades" subtitle="Administra la oferta académica del sistema" />
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+      <div className="grid-2col">
         {/* Universities */}
         <Card>
           <CardHeader>

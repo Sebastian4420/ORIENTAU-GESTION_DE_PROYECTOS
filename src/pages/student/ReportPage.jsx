@@ -74,7 +74,7 @@ export default function ReportPage({ onNavigate }) {
         </CardHeader>
         <RecommendationList recommendations={recommendations} />
       </Card>
-      <div style={{ display: 'flex', gap: 12 }}>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         <Button onClick={() => window.print()}>🖨️ Imprimir Informe</Button>
         <Button variant="outline" onClick={handleDownload}>📥 Descargar</Button>
       </div>

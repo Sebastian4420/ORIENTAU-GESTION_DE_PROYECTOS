@@ -25,12 +25,12 @@ const NAV_ITEMS = {
   ]
 };
 
-export default function Sidebar({ currentPage, onNavigate, onLogout }) {
+export default function Sidebar({ currentPage, onNavigate, onLogout, isOpen }) {
   const { currentUser } = useAuth();
   const items = NAV_ITEMS[currentUser?.role] || [];
 
   return (
-    <nav className="sidebar" id="sidebar">
+    <nav className={`sidebar${isOpen ? ' open' : ''}`} id="sidebar">
       <div className="sidebar-header">
         <h2>OrientaU</h2>
       </div>
